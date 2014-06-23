@@ -1,0 +1,13 @@
+<%= form_for @olympic do |f| %>
+  <p>
+    <%= f.label :sport %>
+    <%= f.text_field :sport %>
+  </p>
+  <p>
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

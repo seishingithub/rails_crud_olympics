@@ -14,6 +14,21 @@ class OlympicsController < ApplicationController
     end
   end
 
+  def show
+    @olympic = Olympic.find(params[:id])
+  end
+
+  def edit
+    @olympic = Olympic.find(params[:id])
+  end
+
+  def update
+    @olympic = Olympic.find(params[:id])
+    @olympic.update_attributes!(olympic_params)
+
+    redirect_to olympics_path
+  end
+
   private
   def olympic_params
     params.require(:olympic).permit(:sport, :country)

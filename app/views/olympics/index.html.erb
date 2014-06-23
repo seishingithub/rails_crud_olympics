@@ -15,7 +15,7 @@
 <% @olympics.each do |olympic| %>
   <ul>
     <li>
-      <%= olympic.sport %>, <%= olympic.country %>
+      <%= link_to "#{olympic.sport}", olympic_path(olympic) %>, <%= olympic.country %>
     </li>
   </ul>
 <% end %>
