@@ -29,6 +29,12 @@ class OlympicsController < ApplicationController
     redirect_to olympics_path
   end
 
+  def destroy
+    @olympic = Olympic.find(params[:id]).delete
+
+    redirect_to olympics_path
+  end
+
   private
   def olympic_params
     params.require(:olympic).permit(:sport, :country)

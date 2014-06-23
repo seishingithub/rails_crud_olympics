@@ -30,4 +30,20 @@ feature 'Manage Olympics' do
     expect(page).to have_content 'tennis'
     expect(page).to have_content 'UK'
   end
+
+  scenario 'User can delete olympic sport from list' do
+    visit '/'
+    click_on 'Add olympic sport'
+    fill_in 'Sport', with: 'soccer'
+    fill_in 'Country', with: 'USA'
+    click_on 'Create sport'
+    expect(page).to have_content 'soccer'
+    expect(page).to have_content 'USA'
+    click_on 'soccer'
+    expect(page).to have_content 'soccer'
+    expect(page).to have_content 'USA'
+    click_on 'Delete'
+    expect(page).to have_no_content 'soccer'
+    expect(page).to have_no_content 'USA'
+  end
 end

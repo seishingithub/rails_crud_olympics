@@ -6,4 +6,5 @@
   </li>
 </ul>
 
-<%= link_to 'Edit', edit_olympic_path %>
+<%= link_to 'Edit', edit_olympic_path(@olympic) %>
+<%= link_to 'Delete', olympic_path(@olympic), method: :delete %>
